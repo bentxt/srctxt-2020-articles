@@ -57,4 +57,4 @@ sources:
 - https://2ality.com/2019/04/nodejs-esm-impl.html
 
 ---
-id: bxt20200424gcoe
+id: bx-20200424gcoe

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>article</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>Javascript Modules CommonJS and ES6</p>
+<p>Copyright (C) ben@srctxt.com, 2020</p>
+<h2 id="ecmascript-modules-esm">EcmaScript Modules (ESM)</h2>
+<ul>
+<li>from ES2005, Javascript supports modules</li>
+<li>uses <code>export</code> keyword and <code>import</code></li>
+<li>in node .mjs extenstions are supported</li>
+</ul>
+<h3 id="lib.js">lib.js:</h3>
+<p>export function hello () { console.log(“hello world”); } packagel.json { “name”:“es-modules”, “type”:“module” }</p>
+<h3 id="main.js">main.js:</h3>
+<p>import { hello } from ‘./lib.js’;</p>
+<p>hello();</p>
+<h3 id="running">running:</h3>
+<p>node main.js</p>
+<h3 id="bundling-to-out.js">bundling to out.js:</h3>
+<p>esbuild –bundle –outfile=out.js main.js node out.js</p>
+<h2 id="commonjs-modules-cjs">CommonJS Modules (CJS)</h2>
+<ul>
+<li>used in node</li>
+<li>uses <code>require</code> and <code>module.exports</code></li>
+</ul>
+<h3 id="lib.js-1">lib.js:</h3>
+<p>function add (a, b) { return a + b } function minus (a, b) { return a + b }</p>
+<p>module.exports = { add, minus };</p>
+<h3 id="main.js-1">main.js</h3>
+<p>const { add, minus } = require(‘./lib’);</p>
+<p>sources: - https://www.sitepoint.com/understanding-module-exports-exports-node-js/ - https://2ality.com/2019/04/nodejs-esm-impl.html</p>
+<hr />
+<p>id: bx-20200424gcoe</p>
+</body>
+</html>
