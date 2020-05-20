@@ -4,7 +4,8 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>article</title>
+  <meta name="author" content="by ben@srctxt.com" />
+  <title>Javascript Modules CommonJS and ES6</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -18,8 +19,11 @@
   <![endif]-->
 </head>
 <body>
-<p>Javascript Modules CommonJS and ES6</p>
-<p>Copyright (C) ben@srctxt.com, 2020</p>
+<header id="title-block-header">
+<h1 class="title">Javascript Modules CommonJS and ES6</h1>
+<p class="author">by ben@srctxt.com</p>
+<p class="date">April 24 2020</p>
+</header>
 <h2 id="ecmascript-modules-esm">EcmaScript Modules (ESM)</h2>
 <ul>
 <li>from ES2005, Javascript supports modules</li>
@@ -27,26 +31,38 @@
 <li>in node .mjs extenstions are supported</li>
 </ul>
 <h3 id="lib.js">lib.js:</h3>
-<p>export function hello () { console.log(“hello world”); } packagel.json { “name”:“es-modules”, “type”:“module” }</p>
+<pre><code>export function hello () {
+  console.log(&quot;hello world&quot;);
+}
+packagel.json
+{
+  &quot;name&quot;:&quot;es-modules&quot;,
+   &quot;type&quot;:&quot;module&quot;
+}</code></pre>
 <h3 id="main.js">main.js:</h3>
-<p>import { hello } from ‘./lib.js’;</p>
-<p>hello();</p>
+<pre><code>import { hello } from &#39;./lib.js&#39;;
+
+hello();</code></pre>
 <h3 id="running">running:</h3>
 <p>node main.js</p>
 <h3 id="bundling-to-out.js">bundling to out.js:</h3>
-<p>esbuild –bundle –outfile=out.js main.js node out.js</p>
+<pre><code>esbuild --bundle --outfile=out.js main.js
+node out.js</code></pre>
 <h2 id="commonjs-modules-cjs">CommonJS Modules (CJS)</h2>
 <ul>
 <li>used in node</li>
 <li>uses <code>require</code> and <code>module.exports</code></li>
 </ul>
 <h3 id="lib.js-1">lib.js:</h3>
-<p>function add (a, b) { return a + b } function minus (a, b) { return a + b }</p>
-<p>module.exports = { add, minus };</p>
+<pre><code>function add (a, b) { return a + b }
+function minus (a, b) { return a + b }
+
+module.exports = { add, minus };</code></pre>
 <h3 id="main.js-1">main.js</h3>
-<p>const { add, minus } = require(‘./lib’);</p>
+<pre><code>const  { add, minus }  = require(&#39;./lib&#39;);
+</code></pre>
 <p>sources: - https://www.sitepoint.com/understanding-module-exports-exports-node-js/ - https://2ality.com/2019/04/nodejs-esm-impl.html</p>
 <hr />
-<p>id: bt-ycwsnmqr 71b4a</p>
+<p>id: bt-20200424gcoe</p>
 </body>
 </html>
